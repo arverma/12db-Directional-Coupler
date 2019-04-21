@@ -1,0 +1,72 @@
+ 
+% Environment: algorithm
+% Send all comments to conte@uicsrd.csrd.uiuc.edu
+% This defines a fun little environment for typesetting algorithms in
+%   a pseudo-algol-like lingo.
+%   For indenting, spaces are fixed-width, and tabs become four spaces.
+%   Keywords are typeset \Akeyword, don't worry about the space at the
+%    end of a keyword (as you would if it were a command), it's added
+%    automatically.
+%   Currently, the following keywords exist:
+%
+%   \Awhile, \Afor, \Ato, \Adownto, \Astep, \Ado, \Aend, \Abegin, \Aif, \Athen,
+%    \Aelse, \Afalse, \Atrue, \Aeach, \Aendif, \Adisable, \Aenable, \Awriteto,
+%    and \Areadfrom
+%%	and \Aand, \Aor, \Arepeat, \Auntil, \Aendif, \Aendfor, \Aendwhile,
+%%	\Aforeach, \Aelseif, \Aenddo, \Ainput, \Aoutput
+%
+%   Returns cause a new paragraph (no indention)
+%   The sequence \<- is defined to be a leftarrow
+%   All other text is in italics.
+%   I suggest using math mode for any expressions, including if clauses, etc.
+%
+%%  Modified by Dale Schouten on Nov 29 1989 :
+%%	fixed \Awhatever to avoid superfluous space before word.
+%%	Added \Aand, \Aor, \Arepeat, \Auntil, \Aendif, \Aendfor, \Aendwhile,
+%%	\Aforeach, \Aelseif, \Aenddo, \Ainput, \Aoutput
+%%
+%%
+%
+%
+\typeout{Document Style Option 'algo' -- Last Revised 10 Oct 1989 (CSRD)}
+{\catcode`\ =\active\catcode`\^^I=\active
+\long\gdef\algorithm{\begingroup\frenchspacing\@vobeyspaces
+\catcode`\^^I=\active\def^^I{\@xobeysp\@xobeysp\@xobeysp\@xobeysp}
+\parindent\z@\parfillskip\@flushglue\parskip\z@\obeylines
+\def\<-{\begingroup $\leftarrow$\endgroup}
+\def\Awhile{\begingroup\bf{while}\endgroup}
+\def\Afor{\begingroup\bf{for}\endgroup}
+\def\Aforeach{\begingroup\bf{foreach}\endgroup}
+\def\Ato{\begingroup\bf{to}\endgroup}
+\def\Adownto{\begingroup\bf{downto}\endgroup}
+\def\Astep{\begingroup\bf{step}\endgroup}
+\def\Ado{\begingroup\bf{do}\endgroup}
+\def\Aend{\begingroup\bf{end}\endgroup}
+\def\Aendif{\begingroup\bf{endif}\endgroup}
+\def\Aenddo{\begingroup\bf{enddo}\endgroup}
+\def\Aendfor{\begingroup\bf{endfor}\endgroup}
+\def\Aendwhile{\begingroup\bf{endwhile}\endgroup}
+\def\Abegin{\begingroup\bf{begin}\endgroup}
+\def\Aif{\begingroup\bf{if}\endgroup}
+\def\Athen{\begingroup\bf{then}\endgroup}
+\def\Aelse{\begingroup\bf{else}\endgroup}
+\def\Aelseif{\begingroup\bf{elseif}\endgroup}
+\def\Afalse{\begingroup\bf{false}\endgroup}
+\def\Atrue{\begingroup\bf{true}\endgroup}
+\def\Aeach{\begingroup\bf{each}\endgroup}
+\def\Aendif{\begingroup\bf{endif}\endgroup}
+\def\Aand{\begingroup\bf{and}\endgroup}
+\def\Aor{\begingroup\bf{or}\endgroup}
+\def\Adisable{\begingroup\bf{disable}\endgroup}
+\def\Aenable{\begingroup\bf{enable}\endgroup}
+\def\Awriteto{\begingroup\bf{write\ to}\endgroup}
+\def\Areadfrom{\begingroup\bf{read\ from}\endgroup}
+\def\Arepeat{\begingroup\bf{repeat}\endgroup}
+\def\Auntil{\begingroup\bf{until}\endgroup}
+\def\Ainput{\begingroup\bf{Input:}\endgroup}
+\def\Aoutput{\begingroup\bf{Output:}\endgroup}
+\em}
+\global\let\endalgorithm=\endgroup
+}
+%
+%

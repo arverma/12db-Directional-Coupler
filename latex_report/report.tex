@@ -1,0 +1,120 @@
+\documentclass[12pt,a4paper]{report}
+%\linespread{1.3}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage[margin = 1in, left = 1.3in]{geometry} %to change margin dimension
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{pifont,multirow}
+\usepackage{enumitem}
+\usepackage{graphics,graphicx,url, wrapfig,latexsym,epsfig}
+\usepackage{hyperref,comment,epic}
+\usepackage{amsmath,algorithm}
+\usepackage{algpseudocode}
+\usepackage{makeidx,setspace}
+\usepackage{longtable}
+\usepackage{mdwmath,mdwtab}
+\usepackage{stfloats}
+\usepackage{subfig}
+\usepackage{verbatim}
+\usepackage[titletoc]{appendix}
+\usepackage[stable]{footmisc}
+%---------------------------------------------------------------------
+\font\en="Latin Modern Roman Unslanted:script=roman" at 12pt
+\font\ens="Latin Modern Roman Unslanted:script=roman" at 12pt
+%----------------------------------------------------------------------
+\graphicspath{{figures/}}
+\setlength{\parskip}{1mm}
+\setlength{\lineskip}{1mm}
+\setlength{\parindent}{20pt}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdfauthor={IIITM},     % author
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor= blue,          % color of internal links
+    citecolor=magenta,        % color of links to bibliography
+    filecolor=cyan,      % color of file links
+    urlcolor=magenta           % color of external links
+}
+%-------------------------------------------------------------------
+\newcommand{\FF}{\vspace*{\medskipamount}}
+\newcommand{\act}[1]{\mbox{#1}}
+\newcommand{\sglspc}{\renewcommand{\baselinestretch}{1.00}\normalsize}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\makeatletter
+\newenvironment{tablehere}{\def\@captype{table}}{}
+\newenvironment{figurehere} {\def\@captype{figure}}{}
+\makeatother
+
+\newcommand{\newphases}{\setcounter{phase}{0}}
+\newcommand{\phase}[1]{\vspace{1 ex}\addtocounter{phase}{1}\par\noindent{\bf \Alph{phase} #1}}
+\newcommand{\phaselabel}[1]{\newsavebox{#1}\sbox{#1}[\Alph{phase}]}
+\newcommand{\phaseref}[1]{\usebox{#1}}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\makeindex
+\newcolumntype{L}{>{\arraybackslash}m{5.7cm}}
+\newcolumntype{T}{>{\arraybackslash}m{2.3cm}}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\begin{document}
+\pagenumbering{roman}
+\include{./pre/coverpage}
+\cleardoublepage\phantomsection
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\pagenumbering{arabic}
+\setcounter{page}{0}
+
+\include{./chap1/chap1} %Introduction
+%\include{./chap2/chap2} % Model building and Testing
+%\include{./chap3/chap3} % Speech processing | Database
+%\include{./chap4/chap4} %Feature Extraction Techniques
+
+\begin{singlespace}
+\begin{appendices}
+\end{appendices}
+\end{singlespace}
+\thispagestyle{empty}
+
+\cleardoublepage\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{project}
+
+
+\newpage
+\addcontentsline{toc}{chapter}{\numberline{}Index}
+\singlespacing{
+\printindex}
+
+\end{document}

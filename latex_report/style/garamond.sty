@@ -1,0 +1,33 @@
+% -----------------------------------------------------------------
+% Filename: garamond.sty ( ITC Garamond )
+% Created by: tex bgm
+% Created using fontinst v1.335
+% Created for [4allTeX postscript font setup]
+% Created on [1996/05/06]
+% Use phbfonti.sty file (in 4allTeX package)
+% Based on PSNFSS 2.4.1 and 3.x by S. Rahtz
+% Put this file in a TEXINPUT directory.
+% -----------------------------------------------------------------
+% Can be processed by LaTeX209 and LaTeX2e
+\def\fileversion{3q}
+\def\filedate{94/10/22}
+\def\docdate{94/10/22}
+\ifx\ProvidesPackage\undefined
+\immediate\write\sixt@@n{File: garamond.sty NFSS1 fontinst (PhB)}
+\ifx\selectfont\undefined
+\@latexerr{No NFSS1 detected...}\@eha\endinput\fi
+
+\ifx\declare@font\undefined\input{psnfss.sup}\fi
+\def\load@bgm{\postscript@fontdef{ITC Garamond }{bgm}%
+  {bgmr}{bgmri}{bgmb}{bgmbi}{bgmrc}{bgmro}}
+\late@extra@def{bgm}{}{}
+\load@bgm
+\else
+\immediate\write\sixt@@n{File: garamond.sty LaTeX2e fontinst (PhB)}
+\ProvidesPackage{garamond}[\filedate\space\fileversion\space
+ LaTeX2e fontinst (PhB)]\fi
+
+\def\rmdefault{bgm}
+\def\switchfont{}
+\endinput
+
